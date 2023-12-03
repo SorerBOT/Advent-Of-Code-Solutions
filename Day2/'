@@ -1,0 +1,18 @@
+import re
+
+file = open('./input.txt', 'r')
+sum = 0
+# for line in file.readlines():
+line = file.readlines()[0]
+if (True):
+    gameidres = re.search("Game (\d+): (( ?\d+)( \w+,?)+;?)+", line)
+    gameid = gameidres.group(1)
+    res = re.findall("(( ?\d+)( \w+,?)+;?)+", line)
+    for result in res:
+        gamedict = {
+            "red": 0,
+            "green": 0,
+            "blue": 0,
+        }
+        print(result[0])
+file.close()
